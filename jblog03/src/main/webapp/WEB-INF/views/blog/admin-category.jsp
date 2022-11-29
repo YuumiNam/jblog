@@ -14,9 +14,8 @@
 		<div id="header">
 			<h1>Spring 이야기</h1>
 			<ul>
-				<li><a href="">로그인</a></li>
-				<li><a href="">로그아웃</a></li>
-				<li><a href="">블로그 관리</a></li>
+				<!-- header -->
+				<c:import url="/WEB-INF/views/includes/header.jsp" />
 			</ul>
 		</div>
 		<div id="wrapper">

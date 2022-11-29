@@ -21,7 +21,7 @@ public class BlogController {
 		
 		if(pathNo01.isPresent()) {
 			categoryNo = pathNo01.get();
-		} else if(pathNo01.isPresent()) {
+		} else if(pathNo02.isPresent()) {
 			categoryNo = pathNo01.get();
 			postNo = pathNo02.get();
 		}
