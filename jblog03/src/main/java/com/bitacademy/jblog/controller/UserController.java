@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bitacademy.jblog.service.UserService;
 import com.bitacademy.jblog.vo.BlogVo;
+import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.UserVo;
 
 @Controller
@@ -22,12 +23,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
-	public String insert(UserVo userVo, BlogVo blogVo) {
+	public String insert(UserVo userVo, BlogVo blogVo, CategoryVo categoryVo) {
 		blogVo.setId(userVo.getId());
-		blogVo.setTitle("Title");
+		blogVo.setTitle(userVo.getName() + "의 블로그");
 		blogVo.setProfile("Profile");
+		categoryVo.setTitle("기본 카테고리");
+		categoryVo.setId(userVo.getId());
 
-		userService.insert(userVo, blogVo);
+		userService.insert(userVo, blogVo, categoryVo);
 		
 		return "redirect:/user/joinsuccess";
 	}
@@ -37,8 +40,9 @@ public class UserController {
 		return "user/joinsuccess";
 	}
 	
-	@RequestMapping("/login")
+	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login() {
 		return "user/login";
 	}
+
 }

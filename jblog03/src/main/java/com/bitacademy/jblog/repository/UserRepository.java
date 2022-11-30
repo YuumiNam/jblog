@@ -1,5 +1,8 @@
 package com.bitacademy.jblog.repository;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,9 +16,18 @@ public class UserRepository {
 	private SqlSession sqlSession;
 	
 	// 회원가입
-	public Boolean insert(UserVo vo) {
-		int count = sqlSession.insert("user.insert", vo);
+	public void insert(UserVo vo) {
+		sqlSession.insert("user.insert", vo);
+	}
+	
+	// 로그인
+	public UserVo findByIdAndPassword(String id, String password) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", id);
+		map.put("password", password);
 		
-		return count == 1;
+		UserVo result = sqlSession.selectOne("user.findByIdAndPassword", map);
+		
+		return result;
 	}
 }

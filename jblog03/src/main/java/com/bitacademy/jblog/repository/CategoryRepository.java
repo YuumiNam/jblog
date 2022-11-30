@@ -4,16 +4,16 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.bitacademy.jblog.vo.BlogVo;
+import com.bitacademy.jblog.vo.CategoryVo;
 
 @Repository
-public class BlogRepository {
+public class CategoryRepository {
 
 	@Autowired
 	private SqlSession sqlSession;
 	
-	// 블로그 생성
-	public void insert(BlogVo vo) {
-		sqlSession.insert("blog.insert", vo);
+	// 카테고리 생성
+	public void insert(CategoryVo vo) {
+		sqlSession.insert("category.insert", vo);
 	}
 }
