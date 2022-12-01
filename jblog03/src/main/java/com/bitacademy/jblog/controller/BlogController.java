@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/{id:(?!assets).*}")
+@RequestMapping("/{id:(?!assets).*}") // 앞에 
 public class BlogController {
 	
 	@RequestMapping({"", "/{pathNo1}", "/{pathNo01}/{pathNo02}"})

@@ -12,10 +12,11 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1>Spring 이야기</h1>
+			<h1>블로그</h1>
 			<ul>
 				<!-- header -->
 				<c:import url="/WEB-INF/views/includes/header.jsp" />
+				<li><a href="${pageContext.request.contextPath}">메인</a></li>
 			</ul>
 		</div>
 		<div id="wrapper">

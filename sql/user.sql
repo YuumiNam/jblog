@@ -16,6 +16,8 @@ insert
 
 -- findByIdAndPassword
 select id, password 
-	from user;
+	from user 
+    where id = 'dltjsam'
+		and password = '1234';
 
 delete from user;
