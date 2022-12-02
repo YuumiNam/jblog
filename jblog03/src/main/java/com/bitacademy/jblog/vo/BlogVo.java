@@ -28,4 +28,5 @@ public class BlogVo {
 	public String toString() {
 		return "BlogVo [id=" + id + ", title=" + title + ", profile=" + profile + "]";
 	}
+	
 }
