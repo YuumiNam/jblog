@@ -4,10 +4,18 @@ select * from blog;
 insert into blog value('dltjsam', '이선무블로그', '하이');
 
 -- 블로그 메인
-select a.name, b.title 
-	from user a, blog b 
-	where b.title = '블로그';
-                     
+-- post가 비어있을때
+select a.name as userName, b.title, b.profile, c.no as categoryNo, c.title as categoryTitle 
+				from user a, blog b, category c 
+					where a.id = 'dooli'
+						and b.id = c.id;
+
+-- post가 비어있지않을때
+select a.name as userName, b.title, b.profile, c.no as categoryNo, c.title as categoryTitle, d.contents as postContents, d.reg_date as postDate 
+	from user a, blog b, category c, post d 
+		where a.id = b.id 
+			and b.id = c.id 
+            and c.no = d.category_no;                  
 						
 
 

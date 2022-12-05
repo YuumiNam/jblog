@@ -35,12 +35,11 @@ public class BlogController {
 			postNo = pathNo02.get();
 		}
 		
+		model.addAttribute("blogVo", blogService.findById(id));
+		
 		blogVo = blogService.findById(id);
 		System.out.println(blogVo);
-		model.addAttribute("blogVo", blogVo);
-		
-		System.out.println(blogVo);
-		
+	
 		return "blog/index";
 	}
 	

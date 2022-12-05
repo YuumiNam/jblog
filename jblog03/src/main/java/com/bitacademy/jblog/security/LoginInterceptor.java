@@ -29,7 +29,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			return false;
 		}
 		
-		System.out.println(authUser);
+		System.out.println("Login : " + authUser);
 		
 		HttpSession session = request.getSession(true);
 		session.setAttribute("authUser", authUser);

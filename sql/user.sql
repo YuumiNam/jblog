@@ -15,7 +15,7 @@ insert
 	values('dltjsam', '이선무', 1234);
 
 -- findByIdAndPassword
-select id, password 
+select id
 	from user 
     where id = 'dltjsam'
 		and password = '1234';

@@ -25,6 +25,8 @@ public class UserController {
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String insert(UserVo userVo, BlogVo blogVo, CategoryVo categoryVo) {
 		blogVo.setId(userVo.getId());
+		blogVo.setTitle(userVo.getName() + "의 블로그");
+		blogVo.setProfile("profile");
 		categoryVo.setTitle("기본 카테고리");
 		categoryVo.setId(userVo.getId());
 		
