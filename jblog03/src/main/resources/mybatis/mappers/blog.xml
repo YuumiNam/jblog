@@ -5,18 +5,16 @@
 		<![CDATA[
 			insert 
 				into blog 
-				value(#{id }, '블로그', 'profile')
+				value(#{id }, #{title }, #{profile })
 		]]>
 	</insert>
 	
-	<select id="findByIdAndCategoryNo" resultType="blogvo" parameterType="blogvo">
-		<![CDATA[
-			select a.name as userName, b.title, b.profile, c.no as categoryNo, c.title as categoryTitle, d.contents as postContents, d.reg_date as postDate 
-				from user a, blog b, category c, post d 
-					where #{id } = b.id 
-						and b.id = c.id 
-						and c.no = d.category_no
-        ]]>
+	<select id="findById" resultType="blogvo" parameterType="String">
+				<![CDATA[
+					select a.name as userName, b.title, b.profile, c.no as categoryNo, c.title as categoryTitle 
+						from user a, blog b, category c 
+							where #{id } = b.id 
+								and b.id = c.id
+        		]]>
 	</select>
-
 </mapper>
