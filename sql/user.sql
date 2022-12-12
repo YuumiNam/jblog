@@ -8,6 +8,7 @@ desc post;
 select * from user;
 select * from blog;
 select * from category;
+select * from post;
 
 -- 회원가입
 insert 

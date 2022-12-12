@@ -1,7 +1,11 @@
 select * from blog;
 
 -- 블로그 생성
-insert into blog value('dltjsam', '이선무블로그', '하이');
+insert into blog value('dltjsam', concat('이선무','의 블로그'), '하이');
+
+select a.name as userName
+	from user a, blog b
+    where a.id = b.id;
 
 -- 블로그 메인
 -- post가 비어있을때
