@@ -45,16 +45,4 @@ public class BlogController {
 		
 		return "redirect:/blog";
 	}
-	
-	@RequestMapping("/admin/category")
-	public String adminCategory(@PathVariable("id") String id) {
-		
-		return "blog/admin-category";
-	}
-	
-	@RequestMapping("/admin/write")
-	public String adminWrite(@PathVariable("id") String id) {
-		
-		return "blog/admin-write";
-	}
 }

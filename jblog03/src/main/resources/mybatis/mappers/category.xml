@@ -5,7 +5,7 @@
 		<![CDATA[
 			insert 
 				into category 
-				values (null, '블로그', #{id })
+				values (null, '기본 카테고리', '기본 설명', #{id })
 		]]>
 		<selectKey keyProperty="no" resultType="Long" order="AFTER"> <!-- no가 null인 상태인데 no의 값을 쓰고싶을때.... selectKey는 insert할때만 쓸수있음!! 그냥 insert할때에는 기본으로 넣어주자 -->
 			<![CDATA[
@@ -13,5 +13,12 @@
 			]]>
 		</selectKey>
 	</insert>
+	
+	<select id="findAll" resultType="categoryvo">
+		<![CDATA[
+			select title, expla
+				from category
+		]]>
+	</select>
 
 </mapper>

@@ -5,7 +5,7 @@
 		<![CDATA[
 			insert 
 				into blog 
-				value(#{id }, #{title }, #{profile })
+				value(#{id }, #{title }, 'profile')
 		]]>
 	</insert>
 	

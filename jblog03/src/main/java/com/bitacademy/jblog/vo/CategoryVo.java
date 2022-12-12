@@ -3,6 +3,7 @@ package com.bitacademy.jblog.vo;
 public class CategoryVo {
 	private Long no;
 	private String title;
+	private String expla;
 	private String id;
 	
 	public Long getNo() {
@@ -17,6 +18,12 @@ public class CategoryVo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getExpla() {
+		return expla;
+	}
+	public void setExpla(String expla) {
+		this.expla = expla;
+	}
 	public String getId() {
 		return id;
 	}
@@ -26,6 +33,6 @@ public class CategoryVo {
 	
 	@Override
 	public String toString() {
-		return "CategoryVo [no=" + no + ", title=" + title + ", id=" + id + "]";
+		return "CategoryVo [no=" + no + ", title=" + title + ", expla=" + expla + ", id=" + id + "]";
 	}
 }
