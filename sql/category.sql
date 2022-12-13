@@ -7,4 +7,9 @@ insert into category values (null, '카테고리3', '기본 설명', 'dltjsam');
 select title, expla, count(title)
 	from category;
 
+-- delete
+delete 
+	from category
+	where no = '20';
+
 delete from category;
