@@ -25,4 +25,9 @@ public class CategoryRepository {
 		
 		return result;
 	}
+	
+	// delete
+	public void deleteByNo(Long no) {
+		sqlSession.delete("category.deleteByNo", no);
+	}
 }

@@ -17,4 +17,12 @@ public class CategoryService {
 	public List<CategoryVo> getContentsList() {
 		return categoryRepository.findAll();
 	}
+	
+	public void insertCategory(CategoryVo categoryVo) {
+		categoryRepository.insert(categoryVo);
+	}
+	
+	public void deleteCategory(Long no) {
+		categoryRepository.deleteByNo(no);
+	}
 }

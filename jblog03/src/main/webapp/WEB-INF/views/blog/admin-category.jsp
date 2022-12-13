@@ -43,22 +43,24 @@
 							</tr>
 						</c:forEach>			  
 				</table>
-      	
+      			
       			<h4 class="n-c">새로운 카테고리 추가</h4>
-		      	<table id="admin-cat-add">
-		      		<tr>
-		      			<td class="t">카테고리명</td>
-		      			<td><input type="text" name="name"></td>
-		      		</tr>
-		      		<tr>
-		      			<td class="t">설명</td>
-		      			<td><input type="text" name="desc"></td>
-		      		</tr>
-		      		<tr>
-		      			<td class="s">&nbsp;</td>
-		      			<td><input type="submit" value="카테고리 추가"></td>
-		      		</tr>      		      		
-		      	</table> 
+      			<form class="category-form" method="post" action="${pageContext.request.contextPath}/blog/${authUser.id }/admin/category">
+			      	<table id="admin-cat-add">
+			      		<tr>
+			      			<td class="t">카테고리명</td>
+			      			<td><input type="text" name="title"></td>
+			      		</tr>
+			      		<tr>
+			      			<td class="t">설명</td>
+			      			<td><input type="text" name="expla"></td>
+			      		</tr>
+			      		<tr>
+			      			<td class="s">&nbsp;</td>
+			      			<td><input type="submit" value="카테고리 추가"></td>
+			      		</tr>      		      		
+			      	</table>
+		      	</form>
 			</div>
 		</div>
 		
