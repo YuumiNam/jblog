@@ -19,7 +19,7 @@ public class CategoryService {
 	}
 	
 	public void insertCategory(CategoryVo categoryVo) {
-		categoryRepository.insert(categoryVo);
+		categoryRepository.insertCategory(categoryVo);
 	}
 	
 	public void deleteCategory(Long no) {

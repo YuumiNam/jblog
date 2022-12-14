@@ -23,6 +23,11 @@ public class UserService {
 	private CategoryRepository categoryRepository;
 	
 	public void insert(UserVo userVo, BlogVo blogVo, CategoryVo categoryVo) {
+		blogVo.setId(userVo.getId());
+		blogVo.setTitle(userVo.getName() + "의 블로그");
+		categoryVo.setTitle("기본 카테고리");
+		categoryVo.setId(userVo.getId());
+		
 		userRepository.insert(userVo);
 		blogRepository.insert(blogVo);
 		categoryRepository.insert(categoryVo);

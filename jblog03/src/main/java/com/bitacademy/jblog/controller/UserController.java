@@ -24,15 +24,9 @@ public class UserController {
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String insert(UserVo userVo, BlogVo blogVo, CategoryVo categoryVo) {
-		blogVo.setId(userVo.getId());
-		blogVo.setTitle(userVo.getName() + "의 블로그");
-		categoryVo.setTitle("기본 카테고리");
-		categoryVo.setId(userVo.getId());
-		
 		userService.insert(userVo, blogVo, categoryVo);
 		
 		System.out.println(userVo + " | " + blogVo + " | " + categoryVo);
-		
 		return "redirect:/user/joinsuccess";
 	}
 	

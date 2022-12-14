@@ -14,9 +14,14 @@ public class CategoryRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	// 카테고리 생성
+	// 가입시 기본 카테고리 생성
 	public void insert(CategoryVo vo) {
 		sqlSession.insert("category.insert", vo);
+	}
+	
+	// 카테고리 생성
+	public void insertCategory(CategoryVo vo) {
+		sqlSession.insert("category.insertCategory", vo);
 	}
 	
 	// findAll
