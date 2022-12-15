@@ -39,7 +39,7 @@
 								<td>${vo.title }</td>
 								<td>10</td>
 								<td>${vo.expla }</td>
-								<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>
+								<td><a href="${pageContext.request.contextPath}/blog/${authUser.id}/admin/category/delete/${vo.no }"><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></a></td>
 							</tr>
 						</c:forEach>			  
 				</table>

@@ -21,6 +21,7 @@ public class CategoryController {
 	public String adminCategory(@PathVariable("id") String id, Model model) {
 		model.addAttribute("list", categoryService.getContentsList());
 		
+		System.out.println(categoryService.getContentsList());
 		return "blog/admin-category";
 	}
 	
@@ -29,8 +30,13 @@ public class CategoryController {
 		categoryService.insertCategory(vo);
 		
 		System.out.println("CategoryVo : " + vo);
-		return "redirect:/blog/" + uservo.getId() + "/admin/category";
+		return "redirect:/blog/" + id + "/admin/category";
 	}
 	
-//	@RequestMapping(value="/admin/category")
+	@RequestMapping(value="/admin/category/delete/{no}")
+	public String deleteCategory(@PathVariable("id") String id, @PathVariable("no") Long no) {
+		categoryService.deleteCategory(no);
+		
+		return "redirect:/";
+	}
 }
