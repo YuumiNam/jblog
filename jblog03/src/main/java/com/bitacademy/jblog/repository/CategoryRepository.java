@@ -24,9 +24,9 @@ public class CategoryRepository {
 		sqlSession.insert("category.insertCategory", vo);
 	}
 	
-	// findAll
-	public List<CategoryVo> findAll() {
-		List<CategoryVo> result = sqlSession.selectList("category.findAll");
+	// 카테고리 목록 불러오기
+	public List<CategoryVo> findById(String id) {
+		List<CategoryVo> result = sqlSession.selectList("category.findById", id);
 		
 		return result;
 	}

@@ -19,9 +19,10 @@ public class CategoryController {
 	
 	@RequestMapping(value="/admin/category", method=RequestMethod.GET)
 	public String adminCategory(@PathVariable("id") String id, Model model) {
-		model.addAttribute("list", categoryService.getContentsList());
+		model.addAttribute("list", categoryService.getContentsList(id));
 		
-		System.out.println(categoryService.getContentsList());
+		System.out.println(id);
+		System.out.println(categoryService.getContentsList(id));
 		return "blog/admin-category";
 	}
 	

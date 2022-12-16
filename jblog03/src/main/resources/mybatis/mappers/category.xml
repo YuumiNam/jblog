@@ -29,10 +29,11 @@
 		</selectKey>
 	</insert>
 	
-	<select id="findAll" resultType="categoryvo">
+	<select id="findById" parameterType="String" resultType="categoryvo">
 		<![CDATA[
 			select no, title, expla
 				from category
+    			where id = #{id }
 		]]>
 	</select>
 	
