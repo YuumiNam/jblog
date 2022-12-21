@@ -4,8 +4,9 @@ select * from category;
 insert into category values (null, '카테고리3', '기본 설명', 'dltjsam');
 
 -- findAll
-select title, expla, count(title)
-	from category;
+select no, title, expla
+	from category
+    where id = 'dltjsam';
 
 -- delete
 delete 
@@ -13,3 +14,5 @@ delete
 	where no = '20';
 
 delete from category;
+
+select last_insert_id();
