@@ -31,9 +31,12 @@
 	
 	<select id="findById" parameterType="String" resultType="categoryvo">
 		<![CDATA[
-			select no, title, expla
-				from category
-    			where id = #{id }
+			select a.no, a.title, a.expla, b.postCount
+				from category a, (select category_no, count(*) as postCount
+									from post
+									group by category_no) b 
+				where a.no = b.category_no 
+   				and id = #{id }
 		]]>
 	</select>
 	

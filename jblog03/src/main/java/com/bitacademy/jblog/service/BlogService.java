@@ -22,4 +22,9 @@ public class BlogService {
 	public BlogVo findById(String id) {
 			return blogRepository.findById(id);
 	}
+	
+	// 블로그 수정
+	public void update(BlogVo vo) {
+		blogRepository.update(vo);
+	}
 }

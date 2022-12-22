@@ -23,4 +23,9 @@ public class BlogRepository {
 		
 		return result;
 	}
+	
+	// 블로그 수정
+	public void update(BlogVo vo) {
+		sqlSession.update("blog.update", vo);
+	}
 }

@@ -21,6 +21,9 @@ select a.name as userName, b.title, b.profile, c.no as categoryNo, c.title as ca
 			and b.id = c.id 
             and c.no = d.category_no;                  
 						
-
+-- 블로그 업데이트
+update blog
+	set title = '선무의 블로그' , profile = 'Profile'
+    where id = 'dltjsam';
 
 delete from blog;

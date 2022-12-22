@@ -2,15 +2,28 @@ package com.bitacademy.jblog.controller;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.bitacademy.jblog.service.BlogService;
+import com.bitacademy.jblog.service.FileUploadService;
+import com.bitacademy.jblog.vo.BlogVo;
 
 @Controller
 @RequestMapping("/blog/{id:(?!assets).*}") // 앞에 
 public class BlogController {
+	
+	@Autowired
+	private BlogService blogService;
+	
+	@Autowired
+	private FileUploadService fileUploadService;
 	
 	@RequestMapping({"", "/{pathNo01}", "/{pathNo01}/{pathNo02}"})
 	public String index(
@@ -40,9 +53,14 @@ public class BlogController {
 	}
 	
 	@RequestMapping(value={"/admin", "/admin/basic"}, method=RequestMethod.POST)
-	public String adminBasic(@PathVariable("id") String id) {
+	public String adminBasic(@PathVariable("id") String id, Model model, BlogVo vo) {
+		// String url = fileUploadService.restore(multipartFile);
 		
+		// model.addAttribute("profile", url);
 		
-		return "redirect:/blog";
+		blogService.update(vo);
+		System.out.println(vo);
+		
+		return "redirect:/blog/" + id;
 	}
 }
